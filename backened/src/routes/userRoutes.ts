@@ -16,7 +16,7 @@ user_router.post("/register", async (req, res) => {
       password,
     });
     if (data) {
-      res.status(statusCode).send(`${data} ,  ${message}`);
+      res.status(statusCode).json(`${data} ,  ${message}`);
     } else {
       res.status(statusCode).send(message);
     }
@@ -31,7 +31,7 @@ user_router.post("/login", async (req, res) => {
     if (data) {
       res
         .status(statusCode)
-        .send(`This is the message:${message}, and the userInfo:${data}`);
+        .json(`This is the message:${message}, and the userInfo:${data}`);
     } else {
       res.status(statusCode).send(message);
     }
